@@ -3,6 +3,7 @@
  */
 import React, { useRef, useState } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity, ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation';
@@ -48,7 +49,7 @@ export function Onboarding() {
   const skip = () => nav.replace('SignIn');
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       <View style={styles.skipWrap}>
         {idx < SLIDES.length - 1 && (
           <TouchableOpacity onPress={skip} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
@@ -91,7 +92,7 @@ export function Onboarding() {
           size="lg"
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
