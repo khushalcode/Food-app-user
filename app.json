@@ -29,10 +29,23 @@
       "favicon": "./assets/images/splash.png"
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "1.9.25"
+          }
+        }
+      ]
     ],
     "experiments": {
       "tsconfigPaths": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b4cba1d6-efdc-4592-941a-f926996209f0"
+      }
     }
   }
 }
